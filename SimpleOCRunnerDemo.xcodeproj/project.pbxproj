@@ -19,6 +19,7 @@
 		0480FD94256F504A00D6D914 /* lexer.l in Sources */ = {isa = PBXBuildFile; fileRef = 0480FD92256F504A00D6D914 /* lexer.l */; };
 		0480FD95256F504A00D6D914 /* parser.y in Sources */ = {isa = PBXBuildFile; fileRef = 0480FD93256F504A00D6D914 /* parser.y */; };
 		0480FDB02570DE7200D6D914 /* SingleEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480FDAF2570DE7200D6D914 /* SingleEngine.m */; };
+		0480FDBA2570FB3000D6D914 /* ORValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480FDB92570FB3000D6D914 /* ORValue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		0480FD93256F504A00D6D914 /* parser.y */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.yacc; path = parser.y; sourceTree = "<group>"; };
 		0480FDAE2570DE7200D6D914 /* SingleEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleEngine.h; sourceTree = "<group>"; };
 		0480FDAF2570DE7200D6D914 /* SingleEngine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleEngine.m; sourceTree = "<group>"; };
+		0480FDB82570FB3000D6D914 /* ORValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORValue.h; sourceTree = "<group>"; };
+		0480FDB92570FB3000D6D914 /* ORValue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORValue.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,8 +163,18 @@
 			children = (
 				0480FDAE2570DE7200D6D914 /* SingleEngine.h */,
 				0480FDAF2570DE7200D6D914 /* SingleEngine.m */,
+				0480FDB72570FB1000D6D914 /* Components */,
 			);
 			path = Engine;
+			sourceTree = "<group>";
+		};
+		0480FDB72570FB1000D6D914 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0480FDB82570FB3000D6D914 /* ORValue.h */,
+				0480FDB92570FB3000D6D914 /* ORValue.m */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,6 +308,7 @@
 			files = (
 				0480FCDA256660FB00D6D914 /* ViewController.m in Sources */,
 				0480FCD4256660FB00D6D914 /* AppDelegate.m in Sources */,
+				0480FDBA2570FB3000D6D914 /* ORValue.m in Sources */,
 				0480FCE5256660FB00D6D914 /* main.m in Sources */,
 				0480FDB02570DE7200D6D914 /* SingleEngine.m in Sources */,
 				0480FD94256F504A00D6D914 /* lexer.l in Sources */,
