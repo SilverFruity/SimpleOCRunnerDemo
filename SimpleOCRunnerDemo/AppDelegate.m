@@ -17,7 +17,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    NSString *source = @"a = 1 + 2; b = 2.0 - 1.0;";
+    NSString *source = @"\
+    int add(int a, double c){\
+      return a + b;\
+    }\
+    int a = 1;\
+    double b = 2.0;\
+    int c = add(a, b);\
+    ";
     [SingleEngine run:source];
     return YES;
 }

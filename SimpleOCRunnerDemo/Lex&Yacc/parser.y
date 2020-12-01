@@ -1,19 +1,17 @@
 %{
 #import <Foundation/Foundation.h>
-#import "ORValue.h"
 #define YYDEBUG 1
 #define YYERROR_VERBOSE
 extern int yylex (void);
 extern void yyerror(const char *s);
 %}
 %union{
-    int64_t intValue;
+    uint64_t intValue;
     double doubleValue;
     __unsafe_unretained id object;
     char *stringValue;
-    void *anyValue;
 }
-%token<object> IDENTIFIER
+%token<stringValue> IDENTIFIER
 %token<doubleValue> DOUBLE_LITERAL
 %token<intValue>    INTETER_LITERAL
 
@@ -21,101 +19,83 @@ extern void yyerror(const char *s);
 %token DOUBLE_TYPE
 %token RETURN
 
-%type<object> statements
+%type<object> statement_list
+%type<object> statement
+%type<object> specifier_type
+%type<object> declaration
+
+
+%type<object> primary_expression
 %type<object> expression
-%type<object> assign_exp
-%type<anyValue> binary_exp
-%type<anyValue> primary_exp
+%type<object> block_statements
 
 %start door
 
 %%
+
 door:
-/*empty*/
-| statements;
+statement_list
 ;
 
-statements:
-expression ';'
-| statements expression ';'
+statement_list: /*empty*/
+| statement
+| statement_list statement
+;
+
+statement:
+declaration ';'
+| expression ';'
+| RETURN expression ';'
+| function_declaration
+;
+
+specifier_type:
+INT_TYPE
+| DOUBLE_TYPE
+;
+
+declaration:
+specifier_type IDENTIFIER
+| declaration '=' expression
+| declaration '(' declaration_list ')'
+;
+
+block_statements:
+'{' statement_list '}'
+;
+
+function_declaration:
+declaration block_statements
+;
+
+primary_expression:
+IDENTIFIER
+| INTETER_LITERAL
+| DOUBLE_LITERAL
 ;
 
 expression:
-assign_exp
-| binary_exp
+primary_expression
+| expression '+' primary_expression
+| expression '(' expression_list ')'
 ;
 
-assign_exp:
-IDENTIFIER '=' binary_exp
-{
-    ORValue *result = $3;
-    switch (result->type){
-      case OR_INT:
-      NSLog(@"%@ = %lld",$1,result->value.intValue);
-      break;
-      case OR_DOUBLE:
-      NSLog(@"%@ = %f",$1,result->value.doubleValue);
-      break;
-    }
-}
+declaration_list:
+declaration
+| declaration_list ',' declaration
 ;
 
-binary_exp:
-primary_exp
-| binary_exp '+' binary_exp
-{
-    ORValue *left = $1;
-    ORValue *right = $3;
-    ORValue *result = makeValueWithType(left->type);
-    switch (left->type){
-      case OR_INT:
-      result->value.intValue = left->value.intValue + right->value.intValue;
-      break;
-      case OR_DOUBLE:
-      result->value.doubleValue = left->value.doubleValue + right->value.doubleValue;
-      break;
-    }
-    free(left); free(right);
-    $$ = result;
-}
-| binary_exp '-' binary_exp
-{
-    ORValue *left = $1;
-    ORValue *right = $3;
-    
-    ORValue *result = makeValueWithType(left->type);
-    switch (left->type){
-      case OR_INT:
-      result->value.intValue = left->value.intValue - right->value.intValue;
-      break;
-      case OR_DOUBLE:
-      result->value.doubleValue = left->value.doubleValue - right->value.doubleValue;
-      break;
-    }
-    free(left); free(right);
-    $$ = result;
-}
+expression_list:
+| expression
+| expression_list ',' expression
 ;
 
-primary_exp:
-INTETER_LITERAL
-{
-    ORValue *value = makeValueWithType(OR_INT);
-    value->value.intValue = $1;
-    $$ = value;
-}
-| DOUBLE_LITERAL
-{
-    ORValue *value = makeValueWithType(OR_DOUBLE);
-    value->value.doubleValue = $1;
-    $$ = value;
-}
-;
+
+
 %%
 
 
 void yyerror(const char *s)
 {
-    fflush(stdout);
     NSLog(@"yyerror: %s", s);
 }
