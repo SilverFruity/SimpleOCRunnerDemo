@@ -13,7 +13,7 @@ extern void yyerror(const char *s);
 }
 %token<stringValue> IDENTIFIER
 %token<doubleValue> DOUBLE_LITERAL
-%token<intValue>    INTETER_LITERAL
+%token<intValue>    INTEGER_LITERAL
 
 %token INT_TYPE
 %token DOUBLE_TYPE
@@ -27,7 +27,9 @@ extern void yyerror(const char *s);
 
 %type<object> primary_expression
 %type<object> expression
-%type<object> block_statements
+%type<object> scope_statements
+%type<object> expression_list
+%type<object> declaration_list
 
 %start door
 
@@ -37,8 +39,7 @@ door:
 statement_list
 ;
 
-statement_list: /*empty*/
-| statement
+statement_list:
 | statement_list statement
 ;
 
@@ -46,7 +47,7 @@ statement:
 declaration ';'
 | expression ';'
 | RETURN expression ';'
-| function_declaration
+| declaration scope_statements
 ;
 
 specifier_type:
@@ -60,17 +61,13 @@ specifier_type IDENTIFIER
 | declaration '(' declaration_list ')'
 ;
 
-block_statements:
+scope_statements:
 '{' statement_list '}'
-;
-
-function_declaration:
-declaration block_statements
 ;
 
 primary_expression:
 IDENTIFIER
-| INTETER_LITERAL
+| INTEGER_LITERAL
 | DOUBLE_LITERAL
 ;
 

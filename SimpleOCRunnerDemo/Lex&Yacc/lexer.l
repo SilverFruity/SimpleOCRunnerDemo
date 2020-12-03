@@ -20,7 +20,7 @@
     yylval.doubleValue = atof(yytext);
     return DOUBLE_LITERAL;
 }
-[1-9][0-9]* {  yylval.intValue = (int)strtol(yytext, NULL, 10); return INTETER_LITERAL; }
+[1-9][0-9]* {  yylval.intValue = (int)strtol(yytext, NULL, 10); return INTEGER_LITERAL; }
 [A-Za-z_$][A-Za-z_$0-9]* { yylval.object = [NSString stringWithUTF8String:yytext]; return IDENTIFIER; }
 %%
 
