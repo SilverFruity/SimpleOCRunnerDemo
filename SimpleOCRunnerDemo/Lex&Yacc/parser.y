@@ -4,6 +4,7 @@
 #define YYERROR_VERBOSE
 extern int yylex (void);
 extern void yyerror(const char *s);
+#define $$(node)  $$ = node;
 %}
 %union{
     uint64_t intValue;

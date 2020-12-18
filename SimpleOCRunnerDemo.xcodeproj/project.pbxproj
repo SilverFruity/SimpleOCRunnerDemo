@@ -20,6 +20,7 @@
 		0480FD95256F504A00D6D914 /* parser.y in Sources */ = {isa = PBXBuildFile; fileRef = 0480FD93256F504A00D6D914 /* parser.y */; };
 		0480FDB02570DE7200D6D914 /* SingleEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480FDAF2570DE7200D6D914 /* SingleEngine.m */; };
 		0480FDBA2570FB3000D6D914 /* ORValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480FDB92570FB3000D6D914 /* ORValue.m */; };
+		EE91B2B0258CEC5E00CF7759 /* ASTClasses.m in Sources */ = {isa = PBXBuildFile; fileRef = EE91B2AF258CEC5E00CF7759 /* ASTClasses.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,8 @@
 		0480FDAF2570DE7200D6D914 /* SingleEngine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleEngine.m; sourceTree = "<group>"; };
 		0480FDB82570FB3000D6D914 /* ORValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORValue.h; sourceTree = "<group>"; };
 		0480FDB92570FB3000D6D914 /* ORValue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORValue.m; sourceTree = "<group>"; };
+		EE91B2AE258CEC5E00CF7759 /* ASTClasses.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASTClasses.h; sourceTree = "<group>"; };
+		EE91B2AF258CEC5E00CF7759 /* ASTClasses.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASTClasses.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,7 @@
 				0480FCD3256660FB00D6D914 /* AppDelegate.m */,
 				0480FCD5256660FB00D6D914 /* SceneDelegate.h */,
 				0480FCD6256660FB00D6D914 /* SceneDelegate.m */,
+				EE91B2A1258CEBFA00CF7759 /* ASTClasses */,
 				0480FDAD2570DE1E00D6D914 /* Engine */,
 				0480FD0B2566611D00D6D914 /* Lex&Yacc */,
 				0480FCD8256660FB00D6D914 /* ViewController.h */,
@@ -175,6 +179,15 @@
 				0480FDB92570FB3000D6D914 /* ORValue.m */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		EE91B2A1258CEBFA00CF7759 /* ASTClasses */ = {
+			isa = PBXGroup;
+			children = (
+				EE91B2AE258CEC5E00CF7759 /* ASTClasses.h */,
+				EE91B2AF258CEC5E00CF7759 /* ASTClasses.m */,
+			);
+			path = ASTClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +323,7 @@
 				0480FCD4256660FB00D6D914 /* AppDelegate.m in Sources */,
 				0480FDBA2570FB3000D6D914 /* ORValue.m in Sources */,
 				0480FCE5256660FB00D6D914 /* main.m in Sources */,
+				EE91B2B0258CEC5E00CF7759 /* ASTClasses.m in Sources */,
 				0480FDB02570DE7200D6D914 /* SingleEngine.m in Sources */,
 				0480FD94256F504A00D6D914 /* lexer.l in Sources */,
 				0480FCD7256660FB00D6D914 /* SceneDelegate.m in Sources */,
@@ -486,8 +500,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5B852MVZ4Z;
 				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				INFOPLIST_FILE = SimpleOCRunnerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -504,8 +520,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5B852MVZ4Z;
 				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				INFOPLIST_FILE = SimpleOCRunnerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
