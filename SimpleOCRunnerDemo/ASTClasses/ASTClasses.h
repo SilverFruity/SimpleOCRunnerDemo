@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 typedef enum{
-    ASTSpecifierTypeInt,
+    ASTSpecifierTypeInt = 0,
     ASTSpecifierTypeDouble
 }ASTSpecifierType;
 
@@ -37,11 +37,18 @@ typedef enum{
     ASTValueNodeDouble
 }ASTValueNodeType;
 
+typedef union {
+    void *pointerValue;
+    int64_t intValue;
+    double doubleValue;
+}ASTValueNodeValue;
+
 @interface ASTValueNode: ASTNode
 @property (nonatomic, assign) ASTValueNodeType type;
-@property (nonatomic, strong) NSString *identiferValue;
-@property (nonatomic, assign) int64_t intValue;
-@property (nonatomic, assign) double doubleValue;
+@property (nonatomic, assign) ASTValueNodeValue value;
++ (instancetype)nodeWithIdentifier:(NSString *)value;
++ (instancetype)nodeWithInt:(int64_t)value;
++ (instancetype)nodeWithDouble:(int)value;
 @end
 
 @interface ASTInitDeclareNode: ASTNode
