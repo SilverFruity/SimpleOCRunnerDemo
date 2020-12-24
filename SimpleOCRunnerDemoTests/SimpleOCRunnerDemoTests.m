@@ -7,6 +7,8 @@
 
 #import <XCTest/XCTest.h>
 #import "SingleEngine.h"
+#import "ORValue.h"
+#import "EvalScope.h"
 @interface SimpleOCRunnerDemoTests : XCTestCase
 
 @end
@@ -21,7 +23,7 @@
     // Put teardown code here. This method is called after the invocation of each test method in the class.
 }
 
-- (void)testExample {
+- (void)testGenerateAST{
     NSString *source =
     @"int a = 1;"
     "double b = 1.0;";
@@ -44,6 +46,14 @@
     XCTAssert([(ASTValueNode *)node2.expression value].doubleValue == 1.0);
 }
 
+- (void)testASTExecute{
+    NSString *source =
+    @"int a = 1;"
+    "double b = 1.0;"
+    "int c = a + b;";
+    [SingleEngine run:source];
+    XCTAssert([[EvalScope topScope] getValueWithIdentifier:@"c"].intValue == 2);
+}
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{

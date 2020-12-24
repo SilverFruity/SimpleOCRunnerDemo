@@ -7,6 +7,7 @@
 
 #import "SingleEngine.h"
 #import "ASTClasses.h"
+#import "ASTClasses+Execute.h"
 AST *globalAst = nil;
 NSString *parserError = nil;
 @implementation SingleEngine
@@ -25,6 +26,9 @@ NSString *parserError = nil;
     return globalAst;
 }
 + (void)run:(NSString *)source{
-//    AST *ast = [self parse:source];
+    AST *ast = [self parse:source];
+    for (ASTNode *node in ast.nodes){
+        [node execute:[EvalScope topScope]];
+    }
 }
 @end

@@ -6,20 +6,26 @@
 //
 
 #import <Foundation/Foundation.h>
-
-typedef enum{
-    OR_INT,
-    OR_DOUBLE
-}ORValueType;
-
+#import "OCTypeEncode.h"
 typedef union{
     int64_t intValue;
     double doubleValue;
 }ORRealValue;
 
-typedef struct{
-    ORValueType type;
-    ORRealValue value;
-}ORValue;
+@interface ORValue: NSObject
+{
+    ORRealValue _realValue;
+}
+@property (nonatomic, assign, readonly)OCType type;
+@property (nonatomic, assign)char *typeEncode;
+@property (nonatomic, assign)void *pointer;
+- (instancetype)initWithPointer:(void *)pointer typeEncode:(const char *)typeEncode;
++ (instancetype)voidValue;
+@end
 
-ORValue *makeValueWithType(ORValueType type);
+
+
+@interface ORValue(Value)
+@property (nonatomic, assign, readonly)int64_t intValue;
+@property (nonatomic, assign, readonly)double doubleValue;
+@end

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0418628A25948CDB007993D9 /* OCTypeEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 0418628925948CDB007993D9 /* OCTypeEncode.m */; };
+		0418629325948DCD007993D9 /* EvalScope.m in Sources */ = {isa = PBXBuildFile; fileRef = 0418629225948DCD007993D9 /* EvalScope.m */; };
+		0418629925948E12007993D9 /* GlobalFunctionTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 0418629825948E12007993D9 /* GlobalFunctionTable.m */; };
+		0418629F25948E1C007993D9 /* EvalArgsStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0418629E25948E1C007993D9 /* EvalArgsStack.m */; };
+		041862BC259499C4007993D9 /* ASTDeclareNode+TypeEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 041862BB259499C4007993D9 /* ASTDeclareNode+TypeEncode.m */; };
+		041862C825949AB5007993D9 /* ASTClasses+Execute.m in Sources */ = {isa = PBXBuildFile; fileRef = 041862C725949AB5007993D9 /* ASTClasses+Execute.m */; };
 		0480FCD4256660FB00D6D914 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480FCD3256660FB00D6D914 /* AppDelegate.m */; };
 		0480FCD7256660FB00D6D914 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480FCD6256660FB00D6D914 /* SceneDelegate.m */; };
 		0480FCDA256660FB00D6D914 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480FCD9256660FB00D6D914 /* ViewController.m */; };
@@ -41,6 +47,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0418628825948CDB007993D9 /* OCTypeEncode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCTypeEncode.h; sourceTree = "<group>"; };
+		0418628925948CDB007993D9 /* OCTypeEncode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCTypeEncode.m; sourceTree = "<group>"; };
+		0418629125948DCD007993D9 /* EvalScope.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EvalScope.h; sourceTree = "<group>"; };
+		0418629225948DCD007993D9 /* EvalScope.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EvalScope.m; sourceTree = "<group>"; };
+		0418629725948E12007993D9 /* GlobalFunctionTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalFunctionTable.h; sourceTree = "<group>"; };
+		0418629825948E12007993D9 /* GlobalFunctionTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlobalFunctionTable.m; sourceTree = "<group>"; };
+		0418629D25948E1C007993D9 /* EvalArgsStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EvalArgsStack.h; sourceTree = "<group>"; };
+		0418629E25948E1C007993D9 /* EvalArgsStack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EvalArgsStack.m; sourceTree = "<group>"; };
+		041862BA259499C4007993D9 /* ASTDeclareNode+TypeEncode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ASTDeclareNode+TypeEncode.h"; sourceTree = "<group>"; };
+		041862BB259499C4007993D9 /* ASTDeclareNode+TypeEncode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ASTDeclareNode+TypeEncode.m"; sourceTree = "<group>"; };
+		041862C625949AB5007993D9 /* ASTClasses+Execute.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ASTClasses+Execute.h"; sourceTree = "<group>"; };
+		041862C725949AB5007993D9 /* ASTClasses+Execute.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ASTClasses+Execute.m"; sourceTree = "<group>"; };
 		0480FCCF256660FB00D6D914 /* SimpleOCRunnerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleOCRunnerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0480FCD2256660FB00D6D914 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0480FCD3256660FB00D6D914 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -167,6 +185,8 @@
 			children = (
 				0480FDAE2570DE7200D6D914 /* SingleEngine.h */,
 				0480FDAF2570DE7200D6D914 /* SingleEngine.m */,
+				041862C625949AB5007993D9 /* ASTClasses+Execute.h */,
+				041862C725949AB5007993D9 /* ASTClasses+Execute.m */,
 				0480FDB72570FB1000D6D914 /* Components */,
 			);
 			path = Engine;
@@ -175,8 +195,18 @@
 		0480FDB72570FB1000D6D914 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				041862BA259499C4007993D9 /* ASTDeclareNode+TypeEncode.h */,
+				041862BB259499C4007993D9 /* ASTDeclareNode+TypeEncode.m */,
+				0418628825948CDB007993D9 /* OCTypeEncode.h */,
+				0418628925948CDB007993D9 /* OCTypeEncode.m */,
 				0480FDB82570FB3000D6D914 /* ORValue.h */,
 				0480FDB92570FB3000D6D914 /* ORValue.m */,
+				0418629125948DCD007993D9 /* EvalScope.h */,
+				0418629225948DCD007993D9 /* EvalScope.m */,
+				0418629725948E12007993D9 /* GlobalFunctionTable.h */,
+				0418629825948E12007993D9 /* GlobalFunctionTable.m */,
+				0418629D25948E1C007993D9 /* EvalArgsStack.h */,
+				0418629E25948E1C007993D9 /* EvalArgsStack.m */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -319,13 +349,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0418629F25948E1C007993D9 /* EvalArgsStack.m in Sources */,
 				0480FCDA256660FB00D6D914 /* ViewController.m in Sources */,
 				0480FCD4256660FB00D6D914 /* AppDelegate.m in Sources */,
 				0480FDBA2570FB3000D6D914 /* ORValue.m in Sources */,
+				0418629925948E12007993D9 /* GlobalFunctionTable.m in Sources */,
+				0418629325948DCD007993D9 /* EvalScope.m in Sources */,
+				0418628A25948CDB007993D9 /* OCTypeEncode.m in Sources */,
 				0480FCE5256660FB00D6D914 /* main.m in Sources */,
 				EE91B2B0258CEC5E00CF7759 /* ASTClasses.m in Sources */,
 				0480FDB02570DE7200D6D914 /* SingleEngine.m in Sources */,
 				0480FD94256F504A00D6D914 /* lexer.l in Sources */,
+				041862BC259499C4007993D9 /* ASTDeclareNode+TypeEncode.m in Sources */,
+				041862C825949AB5007993D9 /* ASTClasses+Execute.m in Sources */,
 				0480FCD7256660FB00D6D914 /* SceneDelegate.m in Sources */,
 				0480FD95256F504A00D6D914 /* parser.y in Sources */,
 			);
