@@ -21,7 +21,6 @@
 		0480FCE2256660FB00D6D914 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0480FCE0256660FB00D6D914 /* LaunchScreen.storyboard */; };
 		0480FCE5256660FB00D6D914 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480FCE4256660FB00D6D914 /* main.m */; };
 		0480FCEF256660FB00D6D914 /* SimpleOCRunnerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480FCEE256660FB00D6D914 /* SimpleOCRunnerDemoTests.m */; };
-		0480FCFA256660FB00D6D914 /* SimpleOCRunnerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480FCF9256660FB00D6D914 /* SimpleOCRunnerDemoUITests.m */; };
 		0480FD94256F504A00D6D914 /* lexer.l in Sources */ = {isa = PBXBuildFile; fileRef = 0480FD92256F504A00D6D914 /* lexer.l */; };
 		0480FD95256F504A00D6D914 /* parser.y in Sources */ = {isa = PBXBuildFile; fileRef = 0480FD93256F504A00D6D914 /* parser.y */; };
 		0480FDB02570DE7200D6D914 /* SingleEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480FDAF2570DE7200D6D914 /* SingleEngine.m */; };
@@ -31,13 +30,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		0480FCEB256660FB00D6D914 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0480FCC7256660FB00D6D914 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0480FCCE256660FB00D6D914;
-			remoteInfo = SimpleOCRunnerDemo;
-		};
-		0480FCF6256660FB00D6D914 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0480FCC7256660FB00D6D914 /* Project object */;
 			proxyType = 1;
@@ -74,9 +66,6 @@
 		0480FCEA256660FB00D6D914 /* SimpleOCRunnerDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleOCRunnerDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0480FCEE256660FB00D6D914 /* SimpleOCRunnerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleOCRunnerDemoTests.m; sourceTree = "<group>"; };
 		0480FCF0256660FB00D6D914 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0480FCF5256660FB00D6D914 /* SimpleOCRunnerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleOCRunnerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0480FCF9256660FB00D6D914 /* SimpleOCRunnerDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleOCRunnerDemoUITests.m; sourceTree = "<group>"; };
-		0480FCFB256660FB00D6D914 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0480FD92256F504A00D6D914 /* lexer.l */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lex; path = lexer.l; sourceTree = "<group>"; };
 		0480FD93256F504A00D6D914 /* parser.y */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.yacc; path = parser.y; sourceTree = "<group>"; };
 		0480FDAE2570DE7200D6D914 /* SingleEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleEngine.h; sourceTree = "<group>"; };
@@ -102,13 +91,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0480FCF2256660FB00D6D914 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -117,7 +99,6 @@
 			children = (
 				0480FCD1256660FB00D6D914 /* SimpleOCRunnerDemo */,
 				0480FCED256660FB00D6D914 /* SimpleOCRunnerDemoTests */,
-				0480FCF8256660FB00D6D914 /* SimpleOCRunnerDemoUITests */,
 				0480FCD0256660FB00D6D914 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -127,7 +108,6 @@
 			children = (
 				0480FCCF256660FB00D6D914 /* SimpleOCRunnerDemo.app */,
 				0480FCEA256660FB00D6D914 /* SimpleOCRunnerDemoTests.xctest */,
-				0480FCF5256660FB00D6D914 /* SimpleOCRunnerDemoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -160,15 +140,6 @@
 				0480FCF0256660FB00D6D914 /* Info.plist */,
 			);
 			path = SimpleOCRunnerDemoTests;
-			sourceTree = "<group>";
-		};
-		0480FCF8256660FB00D6D914 /* SimpleOCRunnerDemoUITests */ = {
-			isa = PBXGroup;
-			children = (
-				0480FCF9256660FB00D6D914 /* SimpleOCRunnerDemoUITests.m */,
-				0480FCFB256660FB00D6D914 /* Info.plist */,
-			);
-			path = SimpleOCRunnerDemoUITests;
 			sourceTree = "<group>";
 		};
 		0480FD0B2566611D00D6D914 /* Lex&Yacc */ = {
@@ -258,24 +229,6 @@
 			productReference = 0480FCEA256660FB00D6D914 /* SimpleOCRunnerDemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0480FCF4256660FB00D6D914 /* SimpleOCRunnerDemoUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0480FD04256660FB00D6D914 /* Build configuration list for PBXNativeTarget "SimpleOCRunnerDemoUITests" */;
-			buildPhases = (
-				0480FCF1256660FB00D6D914 /* Sources */,
-				0480FCF2256660FB00D6D914 /* Frameworks */,
-				0480FCF3256660FB00D6D914 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0480FCF7256660FB00D6D914 /* PBXTargetDependency */,
-			);
-			name = SimpleOCRunnerDemoUITests;
-			productName = SimpleOCRunnerDemoUITests;
-			productReference = 0480FCF5256660FB00D6D914 /* SimpleOCRunnerDemoUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -288,10 +241,6 @@
 						CreatedOnToolsVersion = 12.2;
 					};
 					0480FCE9256660FB00D6D914 = {
-						CreatedOnToolsVersion = 12.2;
-						TestTargetID = 0480FCCE256660FB00D6D914;
-					};
-					0480FCF4256660FB00D6D914 = {
 						CreatedOnToolsVersion = 12.2;
 						TestTargetID = 0480FCCE256660FB00D6D914;
 					};
@@ -312,7 +261,6 @@
 			targets = (
 				0480FCCE256660FB00D6D914 /* SimpleOCRunnerDemo */,
 				0480FCE9256660FB00D6D914 /* SimpleOCRunnerDemoTests */,
-				0480FCF4256660FB00D6D914 /* SimpleOCRunnerDemoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -329,13 +277,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		0480FCE8256660FB00D6D914 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0480FCF3256660FB00D6D914 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -375,14 +316,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0480FCF1256660FB00D6D914 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0480FCFA256660FB00D6D914 /* SimpleOCRunnerDemoUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -390,11 +323,6 @@
 			isa = PBXTargetDependency;
 			target = 0480FCCE256660FB00D6D914 /* SimpleOCRunnerDemo */;
 			targetProxy = 0480FCEB256660FB00D6D914 /* PBXContainerItemProxy */;
-		};
-		0480FCF7256660FB00D6D914 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0480FCCE256660FB00D6D914 /* SimpleOCRunnerDemo */;
-			targetProxy = 0480FCF6256660FB00D6D914 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -608,40 +536,6 @@
 			};
 			name = Release;
 		};
-		0480FD05256660FB00D6D914 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SimpleOCRunnerDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "KE-MING-JIANG.SimpleOCRunnerDemoUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SimpleOCRunnerDemo;
-			};
-			name = Debug;
-		};
-		0480FD06256660FB00D6D914 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SimpleOCRunnerDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "KE-MING-JIANG.SimpleOCRunnerDemoUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SimpleOCRunnerDemo;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -668,15 +562,6 @@
 			buildConfigurations = (
 				0480FD02256660FB00D6D914 /* Debug */,
 				0480FD03256660FB00D6D914 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0480FD04256660FB00D6D914 /* Build configuration list for PBXNativeTarget "SimpleOCRunnerDemoUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0480FD05256660FB00D6D914 /* Debug */,
-				0480FD06256660FB00D6D914 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
