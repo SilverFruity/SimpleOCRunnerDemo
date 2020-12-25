@@ -50,9 +50,29 @@
 
 @implementation ORValue(Value)
 - (int64_t)intValue{
-    return _realValue.intValue;
+    switch (self.type) {
+        case OCTypeLongLong:
+            return (int64_t)*(int64_t *)self.pointer;
+            break;
+        case OCTypeDouble:
+            return (int64_t)*(double *)self.pointer;
+            break;
+        default:
+            return 0;
+            break;
+    }
 }
 - (double)doubleValue{
-    return _realValue.doubleValue;
+    switch (self.type) {
+        case OCTypeLongLong:
+            return (double)*(int64_t *)self.pointer;
+            break;
+        case OCTypeDouble:
+            return (double)*(double *)self.pointer;
+            break;
+        default:
+            return 0;
+            break;
+    }
 }
 @end

@@ -72,7 +72,7 @@ typedef enum {
 
 @interface ASTFunctionDeclareNode: ASTNode
 @property (nonatomic, strong) ASTDeclareNode *declare;
-@property (nonatomic, strong) NSMutableArray *argDeclares;
+@property (nonatomic, strong) NSMutableArray <ASTDeclareNode *>*argDeclares;
 @end
 
 @interface ASTFunctionImpNode: ASTNode

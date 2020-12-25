@@ -29,7 +29,7 @@
 + (void)push:(NSArray <ORValue *> *)args{
     [[EvalArgsStack threadStack].stack addObject:args];
 }
-+ (NSArray <ORValue *>*)seek{
++ (NSArray <ORValue *>*)top{
     return [EvalArgsStack threadStack].stack.lastObject;
 }
 + (void)pop{

@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class ORValue;
 @interface EvalArgsStack : NSObject
 + (void)push:(NSArray <ORValue *>*)args;
-+ (NSArray <ORValue *>*)seek;
++ (NSArray <ORValue *>*)top;
 + (void)pop;
 + (BOOL)isEmpty;
 @end
