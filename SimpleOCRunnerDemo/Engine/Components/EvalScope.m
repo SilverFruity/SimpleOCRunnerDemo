@@ -30,14 +30,14 @@
 }
 - (nullable ORValue *)recursiveGetValueWithIdentifier:(NSString *)identifier{
     EvalScope *scope = self;
-    while (scope == nil) {
-        ORValue *result = [self getValueWithIdentifier:identifier];
+    while (scope != nil) {
+        ORValue *result = [scope getValueWithIdentifier:identifier];
         if (result) {
             return result;
         }
         scope = scope.next;
     }
-    return nil;
+    return [ORValue voidValue];
 }
 - (nullable ORValue *)getValueWithIdentifier:(NSString *)identifier{
     return self.vars[identifier];
@@ -47,7 +47,7 @@
 }
 - (void)assignValue:(ORValue *)value identifier:(NSString *)identifier{
     EvalScope *scope = self;
-    while (scope == nil) {
+    while (scope != nil) {
         if ([scope getValueWithIdentifier:identifier]) {
             [scope setValue:value identifier:identifier];
         }

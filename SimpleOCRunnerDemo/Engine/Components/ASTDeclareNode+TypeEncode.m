@@ -11,7 +11,7 @@
 - (const char *)typeEncode{
     switch (self.type.type) {
         case ASTSpecifierTypeInt:
-            return (const char *)OCTypeStringInt;
+            return (const char *)OCTypeStringLongLong;
             break;
         case ASTSpecifierTypeDouble:
             return (const char *)OCTypeStringDouble;

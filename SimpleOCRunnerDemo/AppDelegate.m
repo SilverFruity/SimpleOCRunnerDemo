@@ -7,7 +7,8 @@
 
 #import "AppDelegate.h"
 #import "SingleEngine.h"
-
+#import "EvalScope.h"
+#import "ORValue.h"
 
 @interface AppDelegate ()
 
@@ -18,14 +19,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     NSString *source = @"\
-    int add(int a, double c){\
-      return a + b;\
+    int d = 2;\
+    int add(int arg0, double arg1){\
+      return arg0 + arg1 + d;\
     }\
     int a = 1;\
     double b = 2.0;\
     int c = add(a, b);\
     ";
     [SingleEngine run:source];
+    NSLog(@"c = %lld",[[EvalScope topScope] getValueWithIdentifier:@"c"].intValue);
     return YES;
 }
 

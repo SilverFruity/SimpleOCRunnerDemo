@@ -25,6 +25,7 @@ typedef enum {
 @property (nonatomic, assign)void *pointer;
 - (instancetype)initWithPointer:(void *)pointer typeEncode:(const char *)typeEncode;
 + (instancetype)voidValue;
+- (BOOL)isNormalEnd;
 @end
 
 

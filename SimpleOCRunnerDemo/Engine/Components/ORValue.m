@@ -11,39 +11,48 @@
 - (instancetype)initWithPointer:(void *)pointer typeEncode:(const char *)typeEncode{
     self = [super init];
     if (self) {
-        if (typeEncode == NULL) {
-            typeEncode = strdup(OCTypeStringLongLong);
-        }
-        if (_typeEncode != NULL) {
-            free(_typeEncode);
-        }
-        _typeEncode = strdup(typeEncode);
-        if (pointer != NULL) {
-            switch (*typeEncode) {
-                case OCTypeDouble:
-                    _realValue.doubleValue = *(double *)pointer;
-                    _pointer = &_realValue;
-                    break;
-                case OCTypeLongLong:
-                    _realValue.intValue = *(int64_t *)pointer;
-                    _pointer = &_realValue;
-                default:
-                    break;
-            }
-        }else{
-            _pointer = NULL;
-        }
+        self.typeEncode = (char *)typeEncode;
+        self.pointer = pointer;
     }
     return self;
 }
 -(OCType)type{
     return *_typeEncode;
 }
+- (void)setTypeEncode:(char *)typeEncode{
+    if (typeEncode == NULL) {
+        typeEncode = strdup(OCTypeStringLongLong);
+    }
+    if (_typeEncode != NULL) {
+        free(_typeEncode);
+    }
+    _typeEncode = strdup(typeEncode);
+}
+- (void)setPointer:(void *)pointer{
+    void *replace = NULL;
+    if (pointer == NULL) {
+        pointer = &replace;
+    }
+    switch (*_typeEncode) {
+        case OCTypeDouble:
+            _realValue.doubleValue = *(double *)pointer;
+            _pointer = &_realValue;
+            break;
+        case OCTypeLongLong:
+            _realValue.intValue = *(int64_t *)pointer;
+            _pointer = &_realValue;
+        default:
+            break;
+    }
+}
 - (void)dealloc{
     free(_typeEncode);
 }
 + (instancetype)voidValue{
     return [[self alloc] initWithPointer:NULL typeEncode:OCTypeStringVoid];
+}
+- (BOOL)isNormalEnd{
+    return self.controlState == ORControlStateNormalEnd;
 }
 @end
 
